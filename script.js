@@ -6,6 +6,7 @@ let computerScore = 0;
 function getComputerChoice () {
     let choices = ["rock", "paper", "scissors"]
     let selection = choices[Math.floor(Math.random() * choices.length)]
+    console.log(selection)
     return selection
 }
 
@@ -41,8 +42,6 @@ function playRound (humanChoice, computerChoice) {
 }
 
 
-
-console.log(getComputerChoice())
 playRound(getHumanChoice(), getComputerChoice())
 console.log(hunmanScore)
 console.log(computerScore)
