@@ -1,5 +1,5 @@
 let hunmanScore = 0;
-let conputerScore = 0;
+let computerScore = 0;
 
 
 
@@ -19,5 +19,29 @@ function getHumanChoice () {
     }
 }
 
+
+
+function playRound (humanChoice, computerChoice) {
+    if (humanChoice == computerChoice) {
+        console.log("It's a tie!")
+    
+    } else if ((humanChoice == "paper" && computerChoice == "scissors") 
+            ||  (humanChoice == "scissors" && computerChoice == "rock")
+            ||  (humanChoice == "rock" && computerChoice == "paper")) {
+        console.log("You lose!")
+        computerScore++;
+
+    } else if ((humanChoice == "paper" && computerChoice == "rock")
+            ||  (humanChoice == "scissors" && computerChoice == "paper")
+            ||  (humanChoice == "rock" && computerChoice == "scissors")) {
+        console.log("You win!")
+        hunmanScore++;
+            }
+}
+
+
+
 console.log(getComputerChoice())
-getHumanChoice()
+playRound(getHumanChoice(), getComputerChoice())
+console.log(hunmanScore)
+console.log(computerScore)
