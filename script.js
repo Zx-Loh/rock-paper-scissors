@@ -1,8 +1,14 @@
+let hunmanScore = 0;
+let conputerScore = 0;
+
+
+
 function getComputerChoice () {
     let choices = ["rock", "paper", "scissors"]
     let selection = choices[Math.floor(Math.random() * choices.length)]
     return selection
 }
+
 
 
 function getHumanChoice () {
