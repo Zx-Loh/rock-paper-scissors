@@ -17,6 +17,7 @@ function getHumanChoice () {
     if (humanChoice != "rock" && humanChoice != "paper" && humanChoice != "scissors") {
         getHumanChoice()
     }
+    return humanChoice
 }
 
 
