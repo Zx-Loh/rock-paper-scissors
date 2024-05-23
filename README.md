@@ -1,2 +1,2 @@
 # rock-paper-scissors
-A min project written with basic Javascript knowledge
+A mini project written with basic Javascript knowledge
