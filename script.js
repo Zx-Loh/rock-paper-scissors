@@ -1,5 +1,26 @@
 let hunmanScore = 0;
 let computerScore = 0;
+let options = document.querySelector("#options")
+
+
+
+options.addEventListener("click", (event) => {
+    let target = event.target
+
+    switch(target.id) {
+        case "rock":
+            playRound("rock", getComputerChoice())
+            break;
+
+        case "paper":
+            playRound("paper", getComputerChoice())
+            break;
+
+        case "scissors":
+            playRound("scissors", getComputerChoice())
+            break;
+    }
+})
 
 
 
