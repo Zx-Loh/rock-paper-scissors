@@ -1,6 +1,9 @@
-let hunmanScore = 0;
+let humanScore = 0;
 let computerScore = 0;
-let options = document.querySelector("#options")
+const options = document.querySelector("#options")
+const scoreboard = document.querySelector("#results")
+const humanScoreDisp = document.createElement("div")
+const computerScoreDisp = document.createElement("div")
 
 
 
@@ -10,14 +13,26 @@ options.addEventListener("click", (event) => {
     switch(target.id) {
         case "rock":
             playRound("rock", getComputerChoice())
+            computerScoreDisp.textContent = `Current Comptuer Score: ${computerScore}`
+            humanScoreDisp.textContent = `Current Human Score: ${humanScore}`
+            scoreboard.appendChild(computerScoreDisp)
+            scoreboard.appendChild(humanScoreDisp)
             break;
 
         case "paper":
             playRound("paper", getComputerChoice())
+            computerScoreDisp.textContent = `Current Comptuer Score: ${computerScore}`
+            humanScoreDisp.textContent = `Current Human Score: ${humanScore}`
+            scoreboard.appendChild(computerScoreDisp)
+            scoreboard.appendChild(humanScoreDisp)
             break;
 
         case "scissors":
-            playRound("scissors", getComputerChoice())
+            playRound("paper", getComputerChoice())
+            computerScoreDisp.textContent = `Current Comptuer Score: ${computerScore}`
+            humanScoreDisp.textContent = `Current Human Score: ${humanScore}`
+            scoreboard.appendChild(computerScoreDisp)
+            scoreboard.appendChild(humanScoreDisp)
             break;
     }
 })
@@ -58,12 +73,12 @@ function playRound (humanChoice, computerChoice) {
             ||  (humanChoice == "scissors" && computerChoice == "paper")
             ||  (humanChoice == "rock" && computerChoice == "scissors")) {
         console.log("You win!")
-        hunmanScore++;
+        humanScore++;
             }
-    return hunmanScore, computerScore
+    return humanScore, computerScore
 }
 
 
 
-console.log(hunmanScore)
+console.log(humanScore)
 console.log(computerScore)
