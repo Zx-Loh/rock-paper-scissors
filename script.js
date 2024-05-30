@@ -1,7 +1,11 @@
-let humanScore = 0;
-let computerScore = 0;
+let humanScore = 0
+let computerScore = 0
+
 const options = document.querySelector("#options")
 const scoreboard = document.querySelector("#results")
+
+const humanChoiceDisp = document.createElement("div")
+const computerChoiceDisp = document.createElement("div")
 const humanScoreDisp = document.createElement("div")
 const computerScoreDisp = document.createElement("div")
 
@@ -13,36 +17,41 @@ options.addEventListener("click", (event) => {
     switch(target.id) {
         case "rock":
             playRound("rock", getComputerChoice())
-            computerScoreDisp.textContent = `Current Comptuer Score: ${computerScore}`
-            humanScoreDisp.textContent = `Current Human Score: ${humanScore}`
-            scoreboard.appendChild(computerScoreDisp)
-            scoreboard.appendChild(humanScoreDisp)
+            humanChoiceDisp.textContent = `You picked ${target.id}!`
+            displayScores()
             break;
 
         case "paper":
             playRound("paper", getComputerChoice())
-            computerScoreDisp.textContent = `Current Comptuer Score: ${computerScore}`
-            humanScoreDisp.textContent = `Current Human Score: ${humanScore}`
-            scoreboard.appendChild(computerScoreDisp)
-            scoreboard.appendChild(humanScoreDisp)
+            humanChoiceDisp.textContent = `You picked ${target.id}!`
+            displayScores()
             break;
 
         case "scissors":
-            playRound("paper", getComputerChoice())
-            computerScoreDisp.textContent = `Current Comptuer Score: ${computerScore}`
-            humanScoreDisp.textContent = `Current Human Score: ${humanScore}`
-            scoreboard.appendChild(computerScoreDisp)
-            scoreboard.appendChild(humanScoreDisp)
+            playRound("scissors", getComputerChoice())
+            humanChoiceDisp.textContent = `You picked ${target.id}!`
+            displayScores()
             break;
     }
 })
 
 
 
+function displayScores () {
+    computerScoreDisp.textContent = `Current Comptuer Score: ${computerScore}`
+    humanScoreDisp.textContent = `Current Human Score: ${humanScore}`
+    scoreboard.appendChild(humanChoiceDisp)
+    scoreboard.appendChild(computerChoiceDisp)
+    scoreboard.appendChild(computerScoreDisp)
+    scoreboard.appendChild(humanScoreDisp)
+}
+
+
+
 function getComputerChoice () {
     let choices = ["rock", "paper", "scissors"]
     let selection = choices[Math.floor(Math.random() * choices.length)]
-    console.log(selection)
+    computerChoiceDisp.textContent = `Computer picked ${selection}!`
     return selection
 }
 
@@ -77,8 +86,3 @@ function playRound (humanChoice, computerChoice) {
             }
     return humanScore, computerScore
 }
-
-
-
-console.log(humanScore)
-console.log(computerScore)
