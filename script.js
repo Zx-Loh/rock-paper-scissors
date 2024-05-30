@@ -44,14 +44,5 @@ function playRound (humanChoice, computerChoice) {
 
 
 
-function playGame (x) {
-    for (let i=0; i<x; i++) {
-        playRound(getHumanChoice(), getComputerChoice())
-    }
-
-    return hunmanScore, computerScore
-}
-
-playGame(5)
 console.log(hunmanScore)
 console.log(computerScore)
