@@ -17,4 +17,23 @@ function getComputerChoice()
     }
 }
 
+function getHumanChoice()
+{
+    humanChoice = prompt("Rock, Paper or Scissors?");
+
+    if (humanChoice == "rock")
+    {
+        return "rock";
+    }
+    else if (humanChoice == "paper")
+    {
+        return "paper";
+    }
+    else if (humanChoice == "scissors")
+    {
+        return "scissors";
+    }
+}
+
 console.log(getComputerChoice());
+console.log(getHumanChoice());
