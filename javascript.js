@@ -1,7 +1,10 @@
+humanScore = 0;
+computerScore = 0;
+
 function getComputerChoice()
 {
     // Returns a random number 0, 1 or 2
-    randomNumber = Math.floor(Math.random() * 3);
+    let randomNumber = Math.floor(Math.random() * 3);
 
     if (randomNumber == 0)
     {
@@ -19,7 +22,7 @@ function getComputerChoice()
 
 function getHumanChoice()
 {
-    humanChoice = prompt("Rock, Paper or Scissors?");
+    let humanChoice = prompt("Rock, Paper or Scissors?");
 
     if (humanChoice == "rock")
     {
