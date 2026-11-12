@@ -94,6 +94,13 @@ function playRound(humanChoice, computerChoice)
     // Append the result of this round to the results div
     results.appendChild(roundResult);
 
+    // Update current score display
+    const playerScoreDisp = document.querySelector("#human");
+    const computerScoreDisp = document.querySelector("#computer");
+
+    playerScoreDisp.textContent = humanScore;
+    computerScoreDisp.textContent = computerScore;
+
     // Check if either player has reached 5 points
     if (computerScore >= 5 || humanScore >= 5)
     {
