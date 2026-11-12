@@ -93,6 +93,23 @@ function playRound(humanChoice, computerChoice)
 
     // Append the result of this round to the results div
     results.appendChild(roundResult);
+
+    // Check if either player has reached 5 points
+    if (computerScore >= 5 || humanScore >= 5)
+    {
+        const winner = document.createElement("p");
+
+        if (computerScore > humanScore)
+        {
+            winner.textContent = "You lose!";
+        }
+        else
+        {
+            winner.textContent = "You win!";
+        }
+
+        results.appendChild(winner);
+    }
 }
 
 
