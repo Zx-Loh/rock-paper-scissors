@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+const results = document.querySelector("#results");
 
 function getComputerChoice()
 {
@@ -41,9 +42,12 @@ function getHumanChoice()
 
 function playRound(humanChoice, computerChoice)
 {
+    const roundResult = document.createElement("p");
+
     if (humanChoice == computerChoice)
     {
-        console.log("Draw!");
+        roundResult.textContent = "Draw!";
+        results.appendChild(roundResult);
         return
     }
 
@@ -51,12 +55,12 @@ function playRound(humanChoice, computerChoice)
     {
         if (computerChoice == "paper")
         {
-            console.log("You lose! Paper beats rock");
+            roundResult.textContent = "You lose! Paper beats rock";
             computerScore++;
         }
         else
         {
-            console.log("You win! Rock beats scissors");
+            roundResult.textContent = "You win! Rock beats scissors";
             humanScore++;
         }
     }
@@ -64,12 +68,12 @@ function playRound(humanChoice, computerChoice)
     {
         if (computerChoice == "rock")
         {
-            console.log("You win! Paper beats rock");
+            roundResult.textContent = "You win! Paper beats rock";
             humanScore++;
         }
         else
         {
-            console.log("You lose! Scissors beats paper");
+            roundResult.textContent = "You lose! Scissors beats paper";
             computerScore++;
         } 
     }
@@ -77,15 +81,18 @@ function playRound(humanChoice, computerChoice)
     {
         if (computerChoice == "rock")
         {
-            console.log("You lose! Rock beats scissors");
+            roundResult.textContent = "You lose! Rock beats scissors";
             computerScore++;
         }
         else 
         {
-            console.log("You win! Scissors beats paper!")
+            roundResult.textContent = "You win! Scissors beats paper";
             humanScore++;
         }
     }
+
+    // Append the result of this round to the results div
+    results.appendChild(roundResult);
 }
 
 
